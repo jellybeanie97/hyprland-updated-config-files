@@ -120,11 +120,9 @@ hl.env("XCURSOR_THEME", "catppuccin-frappe-blue-cursors")
 
 -- ---------------------------------------------------------------------
 -- Autostart Apps
-hl.config({
-    exec_once = {
-        "noctalia"
-    }
-})
+hl.on("hyprland.start", function()
+    hl.exec_cmd("noctalia")
+end)
 
 -- -- 4. hyprsunset for warm yellow night light
 -- -- Note: Your systemd user configuration is excellent!
@@ -136,5 +134,5 @@ hl.config({
 hl.device({
     name = "wacom-intuos-pt-s-2-pen",
     output = "eDP-1",
-    region_size = { x = 1920, y = 1200 }
+    region_size = { 1920, 1200 }
 })

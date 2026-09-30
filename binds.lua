@@ -14,9 +14,9 @@ local fileManager = "thunar"
 -- =========================================================
 
 -- --- System ---
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exit())
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + Q", hl.dsp.window.close({}))
+hl.bind(mainMod .. " + M", hl.dsp.exit({}))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({}))
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("hyprctl reload"))
 
@@ -57,8 +57,8 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.swap({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.swap({ direction = "r" }))
 
 -- --- Mouse binds ---
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.move(), { flag = "m" })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { flag = "m" })
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- --- Volume and Brightness ---
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pamixer -i 5"), { flag = "e" })
